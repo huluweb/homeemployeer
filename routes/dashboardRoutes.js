@@ -23,8 +23,8 @@ router.get('/', authMiddleware, async (req, res) => {
     const applicantsCount = applicants.length;
     const reviewApplicants = applicants.filter(applicant => applicant.status === 'Review').length;
     const interviewApplicants = applicants.filter(applicant => applicant.status === 'Interview').length;
-    const rejectedApplicants = applicants.filter(applicant => applicant.status === 'Rejected').length;
-    const offeredApplicants = applicants.filter(applicant => applicant.status === 'Offer').length;
+    const rejectedApplicants = applicants.filter(applicant => applicant.status === 'NO').length;
+    const offeredApplicants = applicants.filter(applicant => applicant.status === 'YES').length;
     const employeeCount = employees.length;
     const employeeQuantitySum = employees.reduce((sum, employee) => sum + (parseInt(employee.quantity, 10) || 0), 0);
     const eventsCount = events.length;
